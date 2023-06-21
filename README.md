@@ -1,0 +1,2 @@
+# dzienniczekv3
+ ćwiczenia
