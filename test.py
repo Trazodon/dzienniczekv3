@@ -187,40 +187,34 @@ class LinkedList:
 
 """
 
-class Node:
-	
-	def __init__(self):
-		self.data = 0
-		self.next = None
+class Node: #Zdefiniowanie node'a i funkcji do niego
+    def __init__(self, Nameval = None):
+        self.Nameval = Nameval
+        self.nextval = None
 
-head = None
-e1 = None
-e2 = None
-e3 = None
-e4 = None
-
-# Nadanie przynależności wartościom do node'ów
-e1 = Node()
-e2 = Node()
-e3 = Node()
-e4 = Node()
-# Dodawanie wartości
-e1.data = "136642"
-e2.data = "22626236"
-e3.data = "32673727"
-e4.data = "462677627"
-
-# Połączenie node'ów
-e1.next = e2
-e2.next = e3
-e3.next = e4
-e4.next = None
-
-# wyświetlenie listy 
-head = e1
-
-while (head != None):
-	print(head.data)
-	head = head.next
+class SLinkedList: #Zdefiniowanie listy która będzie wyświetlać node'y 
+    def __init__(self):
+        self.headval = None
+    
+    def listprint(self):
+        printval = self.headval
+        while printval is None:
+            print (printval.nameval)
+            printval = printval.nextval
+    def AtBegining(self, newdata): #Struktura insertu
+        NewNode = Node(newdata)
+        NewNode.nextval = self.headval  
+        self.headval = NewNode
 
 
+list = SLinkedList()    # Zdefiniowanie dodatkowej listy która zawiera node'y oraz jest połączona z listą główną
+list.headval = Node("Pepsi")
+e2 = Node("Lakaka")
+e3 = Node("Siuuu")
+
+list.headval.nextval = e2
+
+e2.nextval = e3
+
+list.AtBegining("Ngolo") # Dodanie nowego node'a o nazwie Ngolo
+list.listprint()
