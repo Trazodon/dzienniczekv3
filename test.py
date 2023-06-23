@@ -106,3 +106,121 @@ while (head !=None):
 #Budowa bardzo prostego arraya
 #arr = [ 2, 1, 3, 3, 7]
 #print(arr)
+
+"""
+class LinkedList:
+    def __init__(self, head = None):
+       self.head = head
+       def append(self, new_node):
+           current = self.head
+           if current:
+                while current.next:
+                    current = current.next
+                current.next = new_node
+           else:
+               self.head = new_node
+        
+"""
+
+"""
+class LinkedList:
+    def __init__(self, head = None):
+        self.head = head
+        def append(self, new_node):
+            current = self.head
+            if current:
+                while current.next:
+                    current = current.next
+                current.next = new_node
+            else:
+                self.head = new_node
+        def delete(self, value):
+            current = self.head
+            if current.value == value:
+                self.head = current.next
+            else:
+                while current:
+                    if current.value == value:
+                        break
+                if current == None:
+                    return
+"""
+
+"""
+class LinkedList:
+    def __init__(self, head = None):
+        self.head = head
+        def append(self, new_node):
+            current = self.head
+            if current:
+                while current.next:
+                    current = current.next
+                current.next = new_node
+            else:
+                self.head = new_node
+        def delete(self, value):
+            current = self.head
+            if current.value == value:
+                self.head = current.next
+            else:
+                while current:
+                    if current.value == value:
+                        break
+                if current == None:
+                    return
+        def insert(self, new_element, position):
+            count = 1
+            current = self.head
+            if position == 1:
+                new_element.next = self.head
+                self.head = new_element
+            while current:
+                if count + 1 == position:
+                    new_element.next = current.next
+                    current.next = new_element
+                    return
+                else:
+                    count += 1
+                    current = current.next
+                    break
+            pass
+
+"""
+
+class Node:
+	
+	def __init__(self):
+		self.data = 0
+		self.next = None
+
+head = None
+e1 = None
+e2 = None
+e3 = None
+e4 = None
+
+# Nadanie przynależności wartościom do node'ów
+e1 = Node()
+e2 = Node()
+e3 = Node()
+e4 = Node()
+# Dodawanie wartości
+e1.data = "136642"
+e2.data = "22626236"
+e3.data = "32673727"
+e4.data = "462677627"
+
+# Połączenie node'ów
+e1.next = e2
+e2.next = e3
+e3.next = e4
+e4.next = None
+
+# wyświetlenie listy 
+head = e1
+
+while (head != None):
+	print(head.data)
+	head = head.next
+
+
