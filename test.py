@@ -187,34 +187,59 @@ class LinkedList:
 
 """
 
+"""
 class Node: #Zdefiniowanie node'a i funkcji do niego
-    def __init__(self, Nameval = None):
-        self.Nameval = Nameval
-        self.nextval = None
+    def __init__(self, data = None):
+        self.data = data
+        self.next = None
 
-class SLinkedList: #Zdefiniowanie listy która będzie wyświetlać node'y 
+class LinkedList: #Zdefiniowanie head'a 
     def __init__(self):
-        self.headval = None
+        self.head = None
     
-    def listprint(self):
-        printval = self.headval
-        while printval is None:
-            print (printval.nameval)
-            printval = printval.nextval
-    def AtBegining(self, newdata): #Struktura insertu
-        NewNode = Node(newdata)
-        NewNode.nextval = self.headval  
-        self.headval = NewNode
+    def append(self, data): #zdefiniowanie dodawania
+        new_node = Node(data)
+        if self.head is None: 
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+    
+    def traversal(self): #Struktura traversala
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.next
 
 
-list = SLinkedList()    # Zdefiniowanie dodatkowej listy która zawiera node'y oraz jest połączona z listą główną
-list.headval = Node("Pepsi")
-e2 = Node("Lakaka")
-e3 = Node("Siuuu")
+list = LinkedList()    # Zdefiniowanie dodatkowej listy która zawiera node'y oraz jest połączona z listą główną
+list.append("Pepsi")
+list.append("Lukaka")
+list.append("Dudga")
+list.append("Bajana")
+list.append("Walkiki")
+list.append("Nigger")
 
-list.headval.nextval = e2
+list.traversal() # wyświetlenie node'ów
 
-e2.nextval = e3
+"""
 
-list.AtBegining("Ngolo") # Dodanie nowego node'a o nazwie Ngolo
-list.listprint()
+"""
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize = 3)
+print(stack.qsize())
+
+stack.put("a")
+stack.put("b")
+stack.put("c")
+print("Full: ",stack.qsize())
+print("Size: ",stack.empty())
+
+print(stack.get())
+print(stack.get())
+print(stack.get())
+
+"""
